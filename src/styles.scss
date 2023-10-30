@@ -1,0 +1,25 @@
+*{
+  font-family: 'Times New Roman', Times, serif;
+}
+body{
+  background-color: #DFE1E3;
+}
+// fixed colors
+$lableColor : #92A1AD;
+
+// ===================================
+.font-400{
+  font : {
+    weight: 400;
+    size: 14px;
+  }
+  color: $lableColor;
+}
+.font-700{
+  font : {
+    weight: 700;
+  }
+}
+p{
+  margin: initial;
+}

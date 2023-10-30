@@ -1,0 +1,18 @@
+{
+  "title": "Add new Resourc",
+  "save": "Save Changes",
+  "clear": "Clear",
+  "name": "Name is",
+  "choose": "Choose your Type",
+  "avaliable": "avaliable to",
+  "day": "day",
+  "month": "month",
+  "year": "year",
+  "time": "Time Of Resourc",
+  "inTime": "In Time",
+  "fixedTime": "Fixed Time",
+  "Minutes": "Minutes",
+  "Appointment": "Appointment",
+  "modalTitle" : "Data Information",
+  "endDate" : "End Date"
+}

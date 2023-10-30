@@ -1,0 +1,98 @@
+<div class="row mb-3">
+  <div class="col-md-6">
+    <div class="title d-flex align-items-baseline">
+      <i class="fa-solid fa-arrow-right ms-4 text-center fa-lg"></i>
+      <p class="font-700">{{ "title" | translate }}</p>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="addRemove d-flex align-items-center float-end">
+      <div class="form-check form-switch" style="padding-left: initial">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="flexSwitchCheckChecked"
+          checked
+          (click)="checked()"
+        />
+      </div>
+      <p>مفعلة</p>
+      <div class="save">
+        <button
+          class="btn text-white font-700 mx-3"
+          [ngClass]="!isChecked ? 'disabled' : ''"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          <i class="fa-regular fa-floppy-disk"></i>{{ "save" | translate }}
+        </button>
+      </div>
+      <div class="delete">
+        <button class="btn font-700" [ngClass]="!isChecked ? 'disabled' : ''">
+          <i class="fa-solid fa-trash"></i>{{ "clear" | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">{{"modalTitle" | translate}}</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <!-- for name component -->
+        <p>
+           {{"name" | translate}}: {{ (collectedData$ | async)?.reservation?.name }}<br>
+          {{"choose" | translate}}: {{ (collectedData$ | async)?.reservation?.reservasion }} 
+        </p>
+
+        <!-- for time component -->
+        <p>
+           {{ "avaliable" | translate }}: {{ (collectedData$ | async)?.serviceTime?.available }}
+          {{ (collectedData$ | async)?.serviceTime?.option }}<br> 
+
+          {{ (collectedData$ | async)?.serviceTime?.serviceTime }}
+           Number of Appointment : {{(collectedData$ | async)?.serviceTime?.numDate}} {{"Appointment" | translate }}<br>
+
+          
+          {{ (collectedData$ | async)?.serviceTime?.reverseUser }}
+           For: {{ (collectedData$ | async)?.serviceTime?.numMinutes }} {{"Minutes" | translate }} 
+        </p>
+
+
+        <!-- for avaliable component -->
+
+        <p>
+         Day: {{ (collectedData$ | async)?.appointmentsTime?.day }} <br>
+        Start Time: {{ (collectedData$ | async)?.appointmentsTime?.startTime }}<br>
+        End Time: {{ (collectedData$ | async)?.appointmentsTime?.endTime }} 
+        
+        </p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

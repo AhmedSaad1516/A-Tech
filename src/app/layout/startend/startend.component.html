@@ -1,0 +1,59 @@
+<div [formGroup]="reactiveForm" class="mb-3">
+  <div class="row align-items-center w-75">
+    <div class="col-md-1">
+      <div class="form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="flexSwitchCheckChecked"
+          (click)="checked()"
+        />
+        <p>{{ day }}</p>
+      </div>
+    </div>
+    <ng-container formArrayName="Times">
+      <ng-container *ngIf="isChecked">
+        <ng-container *ngFor="let timeForm of Times.controls; let i = index">
+          <ng-container [formGroup]="timeForm">
+            <div class="col-md-5">
+              <div class="startDate w-100 me-3">
+                <p>وقت البدء</p>
+                <input
+                  type="time"
+                  value="09:00"
+                  class="form-control"
+                  formControlName="startTime"
+                  (change)="setTimeData()"
+                />
+              </div>
+            </div>
+            <div class="col-md-5 d-flex align-items-center">
+              <div class="endDate w-100">
+                <p>وقت الانتهاء</p>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder='اختر وقت الانتهاء'
+                  onblur="this.type='text'"
+                  onfocus="this.type ='time'"
+                  formControlName="endTime"
+                />
+              </div>
+              <i
+                class="fa-solid fa-minus text-center rounded-circle ms-3"
+                (click)="deleteRow(i)"
+              ></i>
+            </div>
+          </ng-container>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+    <div class="col-md-1" *ngIf="isChecked">
+      <i
+        class="fa-solid fa-plus text-center rounded-circle"
+        (click)="addNew()"
+      ></i>
+    </div>
+  </div>
+</div>

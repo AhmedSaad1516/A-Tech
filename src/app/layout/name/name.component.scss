@@ -1,0 +1,25 @@
+.info{
+  .image{
+    width: 150px;
+    img{
+      width: inherit;
+    }
+    i{
+      width: 26px;
+      height: 26px;
+      line-height: 26px;
+      cursor: pointer;
+      &:hover{
+        background-color: rgba($color: #0771DE, $alpha: 0.8);
+      }
+      }
+  }
+  .name{
+    label{
+      font-size: 14px;
+    }
+  }
+}
+.type{
+  color: #9E9EB2;
+}

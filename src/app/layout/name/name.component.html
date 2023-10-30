@@ -1,0 +1,37 @@
+<form [formGroup]="reactiveForm">
+  <div class="box p-4 border border-light-subtle rounded-3" style="background-color: #FAF9F9;">
+    <div class="info d-flex align-items-center">
+      <div class="image position-relative ms-4">
+        <img [src]="url" alt="profile image" class="rounded-circle" />
+        <input
+          type="file"
+          id="img"
+          class="d-none"
+          (change)="selectImg($event)"
+          accept="imag/*"
+        />
+        <label for="img" class="position-absolute top-0 end-0"
+          ><i
+            class="fa-regular fa-image rounded-circle text-white bg-primary text-center"
+          ></i
+        ></label>
+      </div>
+      <div class="name w-100">
+        <label for="name" class="font-400">{{"name" | translate}}</label>
+        <input type="text" class="form-control" formControlName="name"/>
+      </div>
+    </div>
+  </div>
+
+  <div  class="type mt-3 p-4 d-flex align-items-center justify-content-between border border-light-subtle rounded-3" style="background-color: #FAF9F9;">
+    <p class="font-400">{{"choose" | translate}}</p>
+    <div>
+      <input  class="form-check-input ms-2" type="radio" id="type" checked value="throughDayes" formControlName="reservasion">
+      <label for="type" class="font-700">حجز خلال اليوم</label>
+    </div>
+    <div>
+      <input  class="form-check-input ms-2" type="radio"  id="type" value="moreDyes" formControlName="reservasion">
+      <label for="type" class="font-700">حجز مدة (اكثر من يوم)</label>
+    </div>
+  </div>
+</form>

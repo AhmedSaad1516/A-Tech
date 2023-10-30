@@ -1,0 +1,25 @@
+.title{
+  p{
+    color: #92A1AD;
+  }
+}
+.controls{
+  button{
+    &:hover{
+      background-color:#0771ED;
+      color: #fff;
+    }
+  }
+}
+.time{
+  background: #fff;
+  width: 200px;
+  padding: 0.3rem;
+  border-radius: 9px;
+  i{
+    font-size: 14px;
+    color: #92A1AD;
+    cursor: pointer;
+  }
+}
+

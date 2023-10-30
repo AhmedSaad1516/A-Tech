@@ -1,0 +1,29 @@
+.title{
+  i{
+    width: 57px;
+    height: 57px;
+    background: #E7EAED;
+    line-height: 57px;
+    border-radius: 17px;
+  }
+  p{
+    font-size: 24px;
+  }
+}
+.addRemove{
+  i{
+    margin-left: 10px;
+  }
+  .save{
+    .btn{
+      background-color: #1C1C28;
+
+    }
+  }
+  .delete{
+    .btn{
+      background-color: #FFF6F6;
+      color: #FF4B55;
+    }
+  }
+}

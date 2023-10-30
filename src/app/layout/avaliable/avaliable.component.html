@@ -1,0 +1,21 @@
+<div
+  class="head p-4 border border-light-subtle rounded-3"
+  style="background-color: #faf9f9"
+>
+  <div class="box d-flex justify-content-between mb-3">
+    <div class="title">
+      <h5>حدد مواعيد العمل للموارد</h5>
+      <p>
+        تكوين إعدادات الأسبوع الخاص بك هنا. ما عليك سوى تحريك أشرطة التمرير
+        وإضافة / إزالة أوقات الراحة لإعداد ساعات العمل.
+      </p>
+    </div>
+    <div class="controls">
+      <button class="btn">إعدادت متقدمة</button>
+      <button class="btn btn-primary me-2">إعدادت تقليدية</button>
+    </div>
+  </div>
+  <ng-container *ngFor="let day of dayes">
+    <app-startend [day]="day" (timeData)="getTimeDate($event)"></app-startend>
+  </ng-container>
+</div>
